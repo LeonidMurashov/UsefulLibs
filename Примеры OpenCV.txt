@@ -1,0 +1,166 @@
+http://docs.opencv.org/trunk/d4/d32/minarea_8cpp-example.html#gsc.tab=0
+			 - выделение прямоугольником, треугольником и кругом
+
+http://docs.opencv.org/trunk/d0/d2a/contours2_8cpp-example.html#gsc.tab=0
+			- контуры + иерархия
+
+http://docs.opencv.org/trunk/d0/d7a/convexhull_8cpp-example.html#gsc.tab=0
+http://docs.opencv.org/3.1.0/d7/d1d/tutorial_hull.html#gsc.tab=0
+			- выделение области выпуклым многоугольником
+
+http://docs.opencv.org/trunk/d3/d63/edge_8cpp-example.html#gsc.tab=0
+			- canny
+
+http://docs.opencv.org/trunk/de/dd0/grabcut_8cpp-example.html#gsc.tab=0
+			- GrabCut segmentation
+
+http://docs.opencv.org/3.1.0/d3/dc0/group__imgproc__shape.html#gada4437098113fd8683c932e0567f47ba&gsc.tab=0
+			- Convexity Defects
+
+http://docs.opencv.org/2.4.2/modules/imgproc/doc/structural_analysis_and_shape_descriptors.html?highlight=approxpolydp#approxpolydp
+			- Аппроксимация углов кривой(уменьшение количества)
+
+
+
+
+/*
+https://habrahabr.ru/post/208092/
+	-тренировка каскадов Хаара
+
+opencv_createsamples.exe -info crops\Good.dat -vec samples.vec -w 20 -h 20
+	-приведение гудов к формату
+opencv_traincascade.exe -data haarcascade -vec samples.vec -bg crops\Bad.dat -numStages 25 -minhitrate 0.99 -maxFalseAlarmRate 0.5 -numPos 400 -numNeg 530 -w 20 -h 20 -mode ALL -precalcValBufSize 1024 -precalcIdxBufSize 1024
+	-запуск обучения
+// opencv_traincascade.exe -data haarcascade -vec samples.vec -bg Bad.dat -numStages 20 -minhitrate 0.99 -maxFalseAlarmRate 0.5 -numPos 400 -numNeg 548  -w 20 -h 20 -mode ALL -precalcValBufSize 1024 -precalcIdxBufSize 1024
+
+/*попытка 2*/
+opencv_createsamples.exe -info crops\Good.dat -vec samples.vec -w 20 -h 30
+opencv_traincascade.exe -data haarcascade -vec samples.vec -bg Bad.dat -numStages 25 -minhitrate 0.99 -maxFalseAlarmRate 0.9 -numPos 800 -numNeg 900  -w 20 -h 30 -mode ALL -precalcValBufSize 1024 -precalcIdxBufSize 1024
+
+
+
+
+*/
+
+
+
+// 
+/* 
+
+http://docs.opencv.org/3.0.0/df/d65/tutorial_table_of_content_introduction.html
+			- установка OpenCV
+			- там же примеры
+
+void cv::goodFeaturesToTrack
+			- углы
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********** пустая заготовка
+
+#include<opencv2/core/core.hpp>
+#include<opencv2/highgui/highgui.hpp>
+#include<opencv2/imgproc/imgproc.hpp>
+#include<iostream>
+
+using namespace std;
+using namespace cv;
+
+
+int main( int argc, char** argv )
+{
+	Mat src;
+	VideoCapture cam;
+	assert(cam.open(0));
+
+	for (;;)
+	{
+		cam >> src;
+
+		imshow("Оригинал", src);
+		if(waitKey(33)==27)break; /// выход с escape
+	}
+  return(0);
+}
+
+
+*****************/
+
+
+
+
+
+
+
+
+
+
+
+///код обнаружение кругов по камере
+
+
+//sourse: http://docs.opencv.org/trunk/d7/d5d/houghcircles_8cpp-example.html#gsc.tab=0
+/*OpenCV-3.1.0 with property sheet*/
+
+
+#include "opencv2/imgcodecs.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include <iostream>
+using namespace cv;
+using namespace std;
+static void help()
+{
+	cout << "\nThis program demonstrates circle finding with the Hough transform.\n"
+		"Usage:\n"
+		"./houghcircles <image_name>, Default is ../data/board.jpg\n" << endl;
+}
+int main(int argc, char** argv)
+{
+	VideoCapture cam(0);
+
+	Mat img;
+	for (;;)
+	{
+		cam >> img;
+		
+		
+		Mat cimg;		
+		cvtColor(img, cimg, COLOR_BGR2GRAY);
+		//GaussianBlur(cimg, cimg, Size(9, 9), 2, 2);
+
+		vector<Vec3f> circles;
+		HoughCircles(cimg, circles, HOUGH_GRADIENT, 1, 30,
+			90, 50, 10, 100 // change the last two parameters
+						   // (min_radius & max_radius) to detect larger circles
+			);
+		for (size_t i = 0; i < circles.size(); i++)
+		{
+			Vec3i c = circles[i];
+			circle(cimg, Point(c[0], c[1]), c[2], Scalar(0, 0, 255), 3, LINE_AA);
+			circle(cimg, Point(c[0], c[1]), 2, Scalar(0, 255, 0), 3, LINE_AA);
+
+			circle(img, Point(c[0], c[1]), c[2], Scalar(0, 0, 255), 3, LINE_AA);
+			circle(img, Point(c[0], c[1]), 2, Scalar(0, 255, 0), 3, LINE_AA);
+		}
+		imshow("detected circles", cimg);
+		imshow("orignal", img);
+		int key = waitKey(1);
+		if (key == 27) break;
+	}
+	return 0;
+} 

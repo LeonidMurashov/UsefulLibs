@@ -1,0 +1,2 @@
+﻿  TestEntries.cpp
+..\..\Testbed\Tests\TestEntries.cpp(73): fatal error C1083: Не удается открыть файл включение: myTest.h: No such file or directory

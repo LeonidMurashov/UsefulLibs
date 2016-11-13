@@ -1,0 +1,14 @@
+﻿  context.c
+  init.c
+  input.c
+  monitor.c
+  wgl_context.c
+  win32_init.c
+  win32_monitor.c
+  win32_time.c
+  win32_tls.c
+  win32_window.c
+  window.c
+  winmm_joystick.c
+  Создание кода...
+  glfw.vcxproj -> D:\libs\Box2D\Build\vs2015\bin\x64\Release\glfw.lib
