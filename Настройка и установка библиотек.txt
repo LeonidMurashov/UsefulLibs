@@ -6,3 +6,6 @@ https://habrahabr.ru/post/278977/
 
 http://kychka-pc.ru/sfml/box2d-sfml.html
 	- BOX2D + SFML //в папке присутствуют готовые сборки
+
+https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_quick_guide.htm
+	- genetic algorithm tutorial

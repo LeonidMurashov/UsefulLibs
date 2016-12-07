@@ -1,0 +1,20 @@
+
+// Код с нуля
+	// Канал Ryan Harris
+https://www.youtube.com/watch?v=aVId8KMsdUU&list=PL29C61214F2146796
+	- плейлист с туториалами по написанию ИНС с нуля на C#(исходный код под последним видео)
+
+// SKLearn
+	// Канал sentdex
+https://www.youtube.com/watch?v=URTZ2jKCgBc&index=1&list=PLQVvvaa0QuDd0flgGphKCej-9jp-QdzZ3
+	- плейлист с туториалами по SVM(SVC) и K-Means (с учителем и без)
+
+// Lasagne
+http://lasagne.readthedocs.io/en/latest/user/tutorial.html
+	- туториал MNIST с тучей ссылок на более базовые туториалы
+
+https://github.com/Lasagne/Lasagne
+	- Lasagne github (внизу примеры)
+
+https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py
+	- исходный код задачи MNIST
