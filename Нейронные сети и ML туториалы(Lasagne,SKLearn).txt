@@ -21,3 +21,6 @@ https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py
 
 https://habrahabr.ru/post/226143/
 	- kaldi распознавание звука
+
+http://www.openslr.org/resources.php
+	- librispeech библиотека записей человеческой речи
