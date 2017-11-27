@@ -19,5 +19,13 @@ https://github.com/Lasagne/Lasagne
 https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py
 	- исходный код задачи MNIST
 
+<<<<<<< HEAD
 "tatoeba" 
 	- база записей голосов
+=======
+https://habrahabr.ru/post/226143/
+	- kaldi распознавание звука
+
+http://www.openslr.org/resources.php
+	- librispeech библиотека записей человеческой речи
+>>>>>>> abd11c76ec055b523ed825bfaa1432d10f005c3f
