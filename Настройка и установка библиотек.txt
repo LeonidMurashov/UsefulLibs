@@ -9,3 +9,10 @@ http://kychka-pc.ru/sfml/box2d-sfml.html
 
 https://www.tutorialspoint.com/genetic_algorithms/genetic_algorithms_quick_guide.htm
 	- genetic algorithm tutorial
+
+	//////////	Python	////////
+	http://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv
+		- opencv binaries
+
+	https://sourceforge.net/projects/pywin32/files/
+		- win32api

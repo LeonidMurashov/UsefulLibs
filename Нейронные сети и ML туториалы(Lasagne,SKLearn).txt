@@ -18,3 +18,6 @@ https://github.com/Lasagne/Lasagne
 
 https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py
 	- исходный код задачи MNIST
+
+"tatoeba" 
+	- база записей голосов

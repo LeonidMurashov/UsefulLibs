@@ -1,0 +1,20 @@
+MuJoCo Pro Trial license activation key, number 87446, type 6.
+
+Issued to Leonid Murashov <l.murashov@yandex.ru>.
+
+Expires November 10, 2017.
+
+This file activates MuJoCo Pro on a single computer with id:
+WINDOWS_OZC1RIONT0M_X6EB54MMK0CX206
+
+Do not modify this file. Its entire content, including the
+plain text section, is used by the activation manager.
+
+67e90b29a515644373c14a916f228dfe81afc959f58a619cc003daeec886070f
+c1128a59a261b48b0a8f044ecab1459d2ddbd193f4e7b123d6fdb9cd71f173b9
+38e07b4fd2f8eac56e90ea6ce6f69ee722ae1cef9ffafa2010dc98c56215e403
+ce3417f77359e18a20d10eddfe73e567f46c552abe5c0016eafa3b536cb1f81b
+3a9ff3b260360b9ac01f273ff29994749d9449729b333226610c6f8ac4508503
+5b13541ccb5225c35a9689d73bf497a8079a6e9d88fd0788b7b7e9b253af9c61
+b2a8fc6b76279fd2195f2db9e00c96f547f0e1920f15ebe66033d51dffb59b09
+5db7c70ce693f50feca17b62611fa01e62252d7f19a8b21adedd001f1298847a
